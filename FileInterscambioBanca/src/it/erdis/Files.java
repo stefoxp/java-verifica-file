@@ -15,7 +15,7 @@ public class Files {
         setFileInputRows(new ArrayList<String>());
     }
 
-    public void leggiFile() {
+    public void read() {
         // setFileInputPath("c:\\test\\file_banca_prova.txt");
         File file = new File(getFileInputPath());
         String line;
@@ -67,7 +67,7 @@ public class Files {
         }
     }
 
-    public void scriviFile() {
+    public void write() {
         File file = new File(getFileOutputPath());
         try {
             OutputStream outputStream = new FileOutputStream(file);

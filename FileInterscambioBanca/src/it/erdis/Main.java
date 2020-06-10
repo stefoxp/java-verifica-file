@@ -1,26 +1,35 @@
 package it.erdis;
 
-import java.io.*;
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
+import javax.swing.*;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
 
 public class Main {
 
 
     public static void main(String[] args) {
+        /* test
         String path = "c:\\test\\";
         String fileInputName = "file_banca_prova.txt";
         String fileOutputName = "file_banca_prova_corretto.txt";
         Files files = new Files(path + fileInputName, path + fileOutputName);
 
-        files.leggiFile();
-        files.scriviFile();
-        // prova();
+        files.read();
+        files.write();
+        // test();
+         */
+        VerificaFileBanca verificaFileBanca = new VerificaFileBanca();
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new verificaFileBanca.setVisible(true);
+            }
+        });
+
+        // verificaFileBanca.
     }
 
-    private static void prova() {
+    /*private static void test() {
         String[][] a = {
                 {"å", "a"},
                 {"à", "a"},
@@ -33,13 +42,13 @@ public class Main {
                 {"ê", "e"},
                 {"ë", "e"},
         };
-        String originale = "";
+        String original = "";
         final String charsetFileInput = "windows-1252";
 
         for (int i = 0; i < a.length; ++i) {
-            // originale = verifiche.replaceWordChars(a[i][0], charsetFileInput);
+            // original = verifiche.replaceWordChars(a[i][0], charsetFileInput);
             byte[] by = a[i][0].getBytes(Charset.forName(charsetFileInput));
-            System.out.println("originale: " + a[i][0]); // + " diventa: " + originale);
+            System.out.println("original: " + a[i][0]); // + " diventa: " + original);
             System.out.println("in byte");
             System.out.println(by);
 
@@ -47,7 +56,7 @@ public class Main {
             // String s = , Charset.forName("UTF-8"));
             System.out.println("ritradotta in stringa: " + a[i][1]);
         }
-    }
+    }*/
 
 //    private static void converti() {
 //        final Charset windowsCharset = Charset.forName("windows-1252");
